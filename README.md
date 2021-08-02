@@ -1,3 +1,3 @@
 # portfolio
 
- https://tmdwl122.github.io/portfolio/
+https://tmdwl122.github.io/resume0/
