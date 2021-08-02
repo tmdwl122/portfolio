@@ -695,7 +695,6 @@ button.close.on i {
     font-size: 18px;
     color: #fff;
     margin-right: 10px;
-    box-shadow: 2px 5px 6px rgba(0,0,0,0.1);
 }
 
 #sect4 button[type=submit] {
