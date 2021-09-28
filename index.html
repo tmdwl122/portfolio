@@ -41,26 +41,27 @@
 	
 	<div class="openlist">
 		<ul>
-			<li><a href="#">HOME</a></li>
-			<li><a href="#">ABOUT</a></li>
-			<li><a href="#">SKILL</a></li>
-			<li><a href="#">PORTFOLIO</a></li>
-			<li><a href="#">CONTACT</a></li>
+			<li><a href="#sect1">HOME</a></li>
+			<li><a href="#sect2">ABOUT</a></li>
+			<li><a href="#sect3">PORTFOLIO</a></li>
+			<li><a href="#sect4">CONTACT</a></li>
 		</ul>
 	</div>
 </header>
 
 
 <!-- 네비게이션 -->
-<ul id="nav">
+<nav id="nav">
 	<li><a href="#"><span title="HOME">HOME</span></a></li>
 	<li><a href="#"><span title="ABOUT">ABOUT</span></a></li>
 	<li><a href="#"><span title="PORTFOLIO">PORTFOLIO</span></a></li>
 	<li><a href="#"><span title="CONTACT">CONTACT</span></a></li>
-</ul>
+</nav>
+
+
 
 <!-- 전체 페이지 -->
-<div id="wrap">
+<main id="main">
 	
 	<!-- 첫 번째 박스 -->
 	<section id="sect1">
@@ -68,7 +69,7 @@
 			<span>WELCOME</span>
 			<span>TO MY</span>
 			<span>PORTFOLIO</span>
-	</div>
+		</div>
 	</section>
 
 	<!-- 두 번째 박스 -->
@@ -150,7 +151,7 @@
 	<div class="portfolio">
 			<ul>
 				<li>
-					<a href="#"><img src="./img/portflio1_main.jpg" alt="">VIEW +</a>
+					<a href="#" data-src1="./img/portflio1_page.jpg"><img src="./img/portflio1_main.jpg" alt="">VIEW +</a>
 				</li>
 				<li>
 					<a href="#"><img src="./img/portflio2_main.jpg" alt="">VIEW +</a>
@@ -167,62 +168,76 @@
 	
 	<!-- 네 번째 박스 -->
 	<section id="sect4">
-		<div class="formbox">
-			<form action="#" method="POST">
-				<fieldset>
-					<legend class="blind">연락처를 남겨주세요.</legend>
-					<table>
-						<colgroup>
-							<col>
-							<col>
-						</colgroup>
-						<tr>
-							<th>
-								<label for="irum">성명</label>
-							</th>
-							<td>
-								<input type="text" name="irum" id="irum">
-							</td>
-						</tr>
-						<tr>
-							<th>
-								<label for="phone">연락처</label>
-							</th>
-							<td>
-								<input type="text" name="hp1" id="phone"> - 
-								<input type="text" name="hp2"> -
-								<input type="text" name="hp3">
-							</td>
-						</tr>
-						<tr>
-							<th>
-								<label for="email">이메일</label>
-							</th>
-							<td>
-								<input type="text" name="eid" id="email">@
-								<input type="text" name="edomain">
-							</td>
-						</tr>
-						<tr>
-							<th>
-								<label for="memo"></label>
-							</th>
-							<td>
-								<textarea name="memo" id="memo"></textarea>
-							</td>
-						</tr>
-					</table>
-				</fieldset>
-				<div class="btn">
-					<button type="submit">전송</button>
-					<button type="reset">취소</button>
+		<div class="contact">
+			<div class="left">
+					<h2>Thank you for Watching<br>
+					감사합니다</h2>
+
+					<!-- heirarchy: #cuboid > form > div*4(cuboid faces) -->
+					<div id="cuboid">
+			<form>
+				<!-- #1 hover button -->
+				<div>
+					<p class="cuboid-text">Subscribe</p>
+				</div>
+				<!-- #2 text input -->
+				<div>
+					<!-- Label to trigger #submit -->
+					<label for="submit" class="submit-icon">
+						<i class="fa fa-chevron-right"></i>
+					</label>
+					<input type="text" id="email" class="cuboid-text" placeholder="Your Email" autocomplete="off"/>
+					<!-- hidden submit button -->
+					<input type="submit" id="submit" />
+				</div>
+				<!-- #3 loading message -->
+				<div>
+					<p class="cuboid-text loader">Just a moment</p>
+				</div>
+				<!-- #4 success message -->
+				<div>
+					<!-- reset/retry button -->
+					<span class="reset-icon"><i class="fa fa-refresh"></i></span>
+					<p class="cuboid-text">Thankyou, we'll be in touch</p>
 				</div>
 			</form>
+					</div>
+			</div>
+		
+			<div class="right">
+				<h3>tmdl122@naver.com</h3>
+			</div>
+			<div class="copy">
+				<p>Copyrightⓒ2021 ITS SKIN SHOP. All Rights Reserved.</p>
+				
+			</div>
+			
+			
 		</div>
+		
+
+		<!-- <div class="contactBox">
+			<form action="#" method="POST">
+				<fieldset>
+					<legend class="blind">이메일을 남겨주세요</legend>
+					<div>
+						<p class="contactText">Contact</p>
+					</div>
+					<div>
+						<label for="email" class="icon"><i class="fas fa-arrow-circle-right"></i></label>
+						<input type="text" name="email" id="email" placeholder="이메일을 남겨주세요">
+					</div>
+					<div>
+						<span><i class="fas fa-sync"></i></span>
+						<p class="contactText">감사합니다</p>
+					</div>
+				</fieldset>
+			</form>
+		</div> -->
 	</section>
 
 
-</div>
+</main>
 
 <script src="./js/index.js"></script>
 </body>
