@@ -151,9 +151,8 @@ body {
 
 .openlist ul {
     position:absolute; 
-    top:50%; transform:translateY(-50%);
-    width:100%; 
-    left: 0;
+    top:50%; transform:translate(-50%,-50%);
+    left: 50%;
     opacity: 0;
     text-align:center;
     font-size:50px; 
@@ -163,6 +162,9 @@ body {
     font-weight: bold;
 }
 
+.openlist ul li:hover {
+    color: #fff;
+}
 .open.on + .openlist ul {
     opacity: 1;
 }
@@ -202,7 +204,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #b9b9b9;
+    background-color: #c7c7c7;
     color: #fff;
     padding: 25px 40px;
     transform-style: preserve-3d;
@@ -315,7 +317,7 @@ section {
 #text::before {
     content: attr(data-text);
     position: absolute;
-    top: 35px;
+    top: 32px;
     left: -100px;
     color: rgba(0, 0, 0, 0.2);
     padding: 0 500px;
