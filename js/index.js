@@ -161,7 +161,13 @@ $('.openlist li a').on('click', function(e){
     }, 800)
 })
 
-
+// section1
+var text = document.getElementById('text')
+var shadow = '';
+for(var i=0; i<30; i++) {
+    shadow +=(shadow? ',':'')+ -i*1+'px '+i*1+'px 0 #d9d9d9'
+}
+text.style.textShadow = shadow;
 
 // 세번째 section
 $('.portfolio a').on('click', function(e){

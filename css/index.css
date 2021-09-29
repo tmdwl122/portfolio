@@ -72,16 +72,27 @@ body {
     z-index:999;  
     width:50px; height:50px;
     border-radius:50%; 
-    background-color:#fff;
+    background-color:#f1f1f1;
     text-align: center;
     line-height: 50px;
     cursor: pointer;
-    box-shadow: 2px 5px 12px rgba(0,0,0,0.1);
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0,0,0,0.15);
+    /* box-shadow: 2px 5px 12px rgba(0,0,0,0.1); */
+}
+
+.open:hover {
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0,0,0,0.15);
 }
 
 .open .bar {
     height: 4px;
-    background-color: #bbbbbb;
+    background-color: #c7c7c7;
     border-radius: 2px;
     position: absolute;
     transition: all 0.5s;
@@ -129,7 +140,7 @@ body {
     width: 0%;
     overflow: hidden;
     height: 100%;
-    background-color: #fff;
+    background-color: #f1f1f1;
     z-index: 998;
     transition: all 0.5s;
 }
@@ -283,15 +294,37 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    padding-bottom: 130px;
 }
-#sect1 .text {
+
+#sect1 #text {
     text-align: center;
     width: 100%;
     position:relative; 	
     font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 11em;
+    line-height: 0.95em;
+    letter-spacing: 2px;
+    transform: rotate(-28deg) skew(25deg);
+    /* color: #f1f1f1; */color: #fff;
+    
 }
 
-.text span {
+#text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 35px;
+    left: -100px;
+    color: rgba(0, 0, 0, 0.2);
+    padding: 0 500px;
+    text-shadow: none;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+#text span {
     display: block;
     font-size: 170px;
     font-weight: 900;
@@ -681,12 +714,6 @@ button.close.on i {
 
 
 
-
-.copy p {
-
-}
-
-
 #sect4 h2 {
     font-size: 30px;
     font-weight: bold;
@@ -697,11 +724,12 @@ button.close.on i {
 
 #sect4 h3 {
     padding-top: 140px;
+
     font-size: 95px; 
     /* margin-bottom: 75px; */
     z-index: 3;
     font-weight: lighter;
-    color: #8684c4;
+    color: #a7a7a7;
     opacity: 0;
     transition: all 3s;
 }
@@ -734,8 +762,13 @@ button.close.on i {
     .cuboid-text {
         /*each face will be 40px high*/
         line-height: 40px; height: 40px;
-        background: #8684c4;
+        background: #979797;
         color: #fff;
+        padding-left: 15px;
+    }
+
+    .cuboid-text i {
+        padding-left: 170px;
     }
     .loader {
         background: hsl(120, 40%, 30%);
