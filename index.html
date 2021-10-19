@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+	<title>Resume</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 	<link rel="stylesheet" href="./css/reset.css">
@@ -150,71 +150,83 @@
 	
 	<!-- 세 번째 박스 -->
 	<section id="sect3">
-	<div class="portfolio">
-			<ul>
-				<li>
-					<a href="#" data-src1="./img/portflio1_main.jpg"><img src="./img/portflio1_main.jpg" alt="">VIEW +</a>
-				</li>
-				<li>
-					<a href="#" data-src1="./img/portflio2_main.jpg"><img src="./img/portflio2_main.jpg" alt="">VIEW +</a>
-				</li>
+		<div class="portfolio">
+				<ul>
+					<li>
+						<a href="https://tmdwl122.github.io/WEBBASE/" data-src1="./img/portflio1_main.jpg" target="_blank"><img src="./img/portfolio1_main.png" alt=""></a>
+						<div class="desp dbox">
+							<div class="text">
+								<p>Clone Coding</p>
+								<span>WEBBASE</span>
+							</div>
+							<div class="icon"><i class="fas fa-plus"></i></div>
+						</div>
+						<!-- <div class="backdesp dbox">
+							<p>back</p>
+						</div> -->
+					</li>
+					<li>
+						<a href="http://tmdl122.dothome.co.kr/newbalance/" data-src1="./img/portfolio2_main.png"><img src="./img/portfolio2_main.png" alt=""></a>
+						<div class="desp dbox">
+							<div class="text">
+								<p>RENEWAL PROJECT</p>
+								<span>NewBalance</span>
+							</div>
+							<div class="icon"><i class="fas fa-plus"></i></div>
+						</div>
+						<!-- <div class="backdesp dbox">
+							<p>back</p>
+						</div> -->
+					</li>
+					<li>
+						<a href="#" data-src1="./img/portflio1_main.jpg"><img src="./img/portfolio3_main.png" alt=""></a>
+						<div class="desp dbox">
+							<div class="text">
+								<p>RENEWAL PROJECT</p>
+								<span>name</span>
+							</div>
+							<div class="icon"><i class="fas fa-plus"></i></div>
+						</div>
+						<!-- <div class="backdesp dbox">
+							<p>back</p>
+						</div> -->
+					</li>
+
+				</ul>
 				
-				<li><a href="#" data-src1="./img/portflio3_main.jpg"><img src="./img/portflio3_main.jpg" alt="">VIEW +</a></li>
-				<li><a href="#" data-src1="./img/portflio4_main.jpg"><img src="./img/portflio4_main.jpg" alt="">VIEW +</a></li>
-			</ul>
+		</div>
+		<!-- <button class="close"><i class="fas fa-times"></i></button>	 -->
 			
-	</div>
-	<!-- <button class="close"><i class="fas fa-times"></i></button>	 -->
-		
 	</section>
 	
 	<!-- 네 번째 박스 -->
 	<section id="sect4">
 		<div class="contact">
 			<div class="left">
-					<h2>Thank you for Watching<br>
-					감사합니다</h2>
-
-					<!-- heirarchy: #cuboid > form > div*4(cuboid faces) -->
-					<div id="cuboid">
-			<form>
-				<!-- #1 hover button -->
-				<div>
-					<p class="cuboid-text"> Contact Me<i class="fas fa-plus"></i></p>
+				<h2>Thank you for Watching<br>
+				감사합니다</h2>
+				<div id="cuboid">
+					<form>
+						<div>
+							<p class="cuboid-text"> Contact Me<i class="fas fa-plus"></i></p>
+						</div>
+						<div>
+							<label for="submit" class="submit-icon">
+								<i class="fa fa-chevron-right"></i>
+							</label>
+							<input type="text" id="email" class="cuboid-text" placeholder="Your Email" 	autocomplete="off"/>
+							<input type="submit" id="submit"/>
+						</div>
+					</form>
 				</div>
-				<!-- #2 text input -->
-				<div>
-					<!-- Label to trigger #submit -->
-					<label for="submit" class="submit-icon">
-						<i class="fa fa-chevron-right"></i>
-					</label>
-					<input type="text" id="email" class="cuboid-text" placeholder="Your Email" autocomplete="off"/>
-					<!-- hidden submit button -->
-					<input type="submit" id="submit" />
-				</div>
-				<!-- #3 loading message -->
-				<div>
-					<p class="cuboid-text loader">Just a moment</p>
-				</div>
-				<!-- #4 success message -->
-				<div>
-					<!-- reset/retry button -->
-					<span class="reset-icon"><i class="fa fa-refresh"></i></span>
-					<p class="cuboid-text">Thankyou, we'll be in touch</p>
-				</div>
-			</form>
-					</div>
 			</div>
 		
 			<div class="right">
 				<h3>tmdl122@naver.com</h3>
 			</div>
 			<div class="copy">
-				<p>Copyrightⓒ    . All Rights Reserved.</p>
-				
+				<p>Copyrightⓒtmdl122    . All Rights Reserved.</p>
 			</div>
-			
-			
 		</div>
 		
 
@@ -243,7 +255,12 @@
 
 <!-- 로딩 페이지 -->
 <div class="introAni">
-	<a href="#" class="loadButton">START</a>
+	<div><img src="./img/load.gif" alt=""></div>
+	<div class="loading">
+		<div class="bar"></div>
+		<div class="num">0%</div>
+		<p>loading...</p>
+	</div>
 </div>
 
 <script src="./js/index.js"></script>

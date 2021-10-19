@@ -170,109 +170,85 @@ for(var i=0; i<30; i++) {
 text.style.textShadow = shadow;
 
 // 세번째 section
-$('.portfolio a').on('click', function(e){
-    e.preventDefault()
-    $('.portfolio').addClass('on')
-    $('.close').addClass('on')
-    var src1 = $(this).attr('data-src1') 
+// $('.portfolio a').on('click', function(){
+    
+//     $('.portfolio').addClass('on')
+//     $('.close').addClass('on')
+//     var src1 = $(this).attr('data-src1') 
     
 
-    $('body').append(`<div class="outlayer"><img src="${src1}" alt=""></div>`)
-    $('.outlayer').css({
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right:0,
-        bottom:0,
-        backgroundColor: 'rgba(0,0,0,0.9)',
-        zIndex: 999,  
-        transition: '0.8',
-        transitionDelay: '0.8',
-    })
+//     $('body').append(`<div class="outlayer"><img src="${src1}" alt=""></div>`)
+//     $('.outlayer').css({
+//         position: 'fixed',
+//         top: 0,
+//         left: 0,
+//         right:0,
+//         bottom:0,
+//         backgroundColor: 'rgba(0,0,0,0.9)',
+//         zIndex: 999,  
+//         transition: '0.8',
+//         transitionDelay: '0.8',
+//     })
     
-    .append('<button class="close"><i class="far fa-times-circle"></i></button>')
-    $('.outlayer .close').css({
-        border:'none',
-        position: 'absolute',
-        top:'180px',
-        right: '21%',
-        fontSize: '40px',
-        color: '#999',
-    })
-    $('.outlayer img').css({ 
-        position: 'absolute',
-        top:'20%',
-        left: '25%',
-        width: "50%",
-        verticalAlign: 'middle'
+//     .append('<button class="close"><i class="far fa-times-circle"></i></button>')
+//     $('.outlayer .close').css({
+//         border:'none',
+//         position: 'absolute',
+//         top:'180px',
+//         right: '21%',
+//         fontSize: '40px',
+//         color: '#999',
+//     })
+//     $('.outlayer img').css({ 
+//         position: 'absolute',
+//         top:'20%',
+//         left: '25%',
+//         width: "50%",
+//         verticalAlign: 'middle'
         
-        })
+//         })
  
-})
+// })
     
-$('body').on('click','.close',function(){
-    $('.close').removeClass('on')
-    $('.portfolio').removeClass('on')
-})
+// $('body').on('click','.close',function(){
+//     $('.close').removeClass('on')
+//     $('.portfolio').removeClass('on')
+// })
 
 
-$('body').on('click','.outlayer',function(){
-    $('.outlayer').fadeOut(500)
-    $('.portfolio').removeClass('on')
-})
+// $('body').on('click','.outlayer',function(){
+//     $('.outlayer').fadeOut(500)
+//     $('.portfolio').removeClass('on')
+// })
 
 
 
 
 // 4번째 구역
-
-//jQuery time
-//jQuery time
-
-//add '.ready' to form when user focuses on it
-$("#email").focus(function(){
-	$("#cuboid form").addClass("ready");
-})
-//remove '.ready' when user blus away but only if there is no content
-$("#email").blur(function(){
-	if($(this).val() == "")
-		$("#cuboid form").removeClass("ready");
+$("#email").on('mouseover', function(){
+    $("#cuboid form").addClass("ready");
 })
 
-//If the user is typing something make the arrow green/.active
-$("#email").keyup(function(){
-	//this adds .active class only if the input has some text
-	$(".submit-icon").toggleClass("active", $(this).val().length > 0);
-})
-
-//on form submit remove .ready and add .loading to the form
-$("#cuboid form").submit(function(){
-	$(this).removeClass("ready").addClass("loading");
-	//finish loading in 3s
-	setTimeout(complete, 3000);
-	//prevent default form submisson
-	return false;
-})
-function complete()
-{
-	$("#cuboid form").removeClass("loading").addClass("complete");
-}
-//reset/refresh functionality
-$(".reset-icon").click(function(){
-	$("#cuboid form").removeClass("complete");
+$("#email").on('mouseout', function(){
+    $("#cuboid form").removeClass("ready");
 })
 
 
 
 // 로드페이지
-$('.loadButton').on('click', function(){
- 
+$(window).on('load', function(){
+    var i = 0;
+    var timer = setInterval(add, 40)
 
-            $('.introAni').delay(500).fadeOut(0)
+    function add(){
+        i++
+        if (i>=100) {
+            clearInterval(timer)
+            $('.introAni').delay(2000).fadeOut(0)
             // $('.introAni').animate({},1000, function(){
             //     $(this).hide()
             // })
-        
-
-    
+        }
+        $('.introAni .num').text(i+'%')
+    }
 })
