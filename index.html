@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+	<title>Resume</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/slick.css">
-	<link rel="stylesheet" href="./css/normalize.css">
 	<link rel="stylesheet" href="./css/index.css">
+	<link href="/static/css/main.9b9e271e.chunk.css" rel="stylesheet">
 	<script src="./js/jquery-1.12.4.min.js"></script>
 	<script src="./js/slick.min.js"></script>
-	<script src="./js/prefixfree.min.js"></script>
+	<!-- <script src="./js/prefixfree.min.js"></script> -->
 	<script src="./js/jquery.mousewheel.min.js"></script>
 	
 </head>
@@ -21,7 +21,7 @@
 	
 <header id="header">
 	<!-- 로고 -->
-	<!-- <h1><img src="./img/logo2.png" alt=""></h1> -->
+	<!-- <h1><img src="./img/logo3.png" alt=""></h1> -->
 
 	<!-- 주 메뉴 -->
 	<!-- <ul id="menu">
@@ -65,6 +65,7 @@
 	
 	<!-- 첫 번째 박스 -->
 	<section id="sect1">
+		<img src="./img/start2.gif" alt="">
 	<div id="text" data-text="WELCOME TO MY PORTFOLIO">
 		WELCOME<br> TO MY<br> PORTFOLIO
 			<!-- <span>WELCOME</span>
@@ -143,77 +144,89 @@
 				
 			</div>
 		</div>
-	
-
+		
+		<div id="root"></div>
 	</section>
 	
 	<!-- 세 번째 박스 -->
 	<section id="sect3">
-	<div class="portfolio">
-			<ul>
-				<li>
-					<a href="#" data-src1="./img/portflio1_main.jpg"><img src="./img/portflio1_main.jpg" alt="">VIEW +</a>
-				</li>
-				<li>
-					<a href="#" data-src1="./img/portflio2_main.jpg"><img src="./img/portflio2_main.jpg" alt="">VIEW +</a>
-				</li>
+		<div class="portfolio">
+				<ul>
+					<li>
+						<a href="https://tmdwl122.github.io/WEBBASE/" data-src1="./img/portflio1_main.jpg"><img src="./img/portfolio1_main.png" alt=""></a>
+						<div class="desp dbox">
+							<div class="text">
+								<p>Clone Coding</p>
+								<span>WEBBASE</span>
+							</div>
+							<div class="icon"><i class="fas fa-plus"></i></div>
+						</div>
+						<!-- <div class="backdesp dbox">
+							<p>back</p>
+						</div> -->
+					</li>
+					<li>
+						<a href="#" data-src1="./img/portfolio2_main.png"><img src="./img/portfolio2_main.png" alt=""></a>
+						<div class="desp dbox">
+							<div class="text">
+								<p>RENEWAL PROJECT</p>
+								<span>NewBalance</span>
+							</div>
+							<div class="icon"><i class="fas fa-plus"></i></div>
+						</div>
+						<!-- <div class="backdesp dbox">
+							<p>back</p>
+						</div> -->
+					</li>
+					<li>
+						<a href="#" data-src1="./img/portflio1_main.jpg"><img src="./img/portfolio3_main.png" alt=""></a>
+						<div class="desp dbox">
+							<div class="text">
+								<p>RENEWAL PROJECT</p>
+								<span>name</span>
+							</div>
+							<div class="icon"><i class="fas fa-plus"></i></div>
+						</div>
+						<!-- <div class="backdesp dbox">
+							<p>back</p>
+						</div> -->
+					</li>
+
+				</ul>
 				
-				<li><a href="#" data-src1="./img/portflio3_main.jpg"><img src="./img/portflio3_main.jpg" alt="">VIEW +</a></li>
-				<li><a href="#" data-src1="./img/portflio4_main.jpg"><img src="./img/portflio4_main.jpg" alt="">VIEW +</a></li>
-			</ul>
+		</div>
+		<!-- <button class="close"><i class="fas fa-times"></i></button>	 -->
 			
-	</div>
-	<!-- <button class="close"><i class="fas fa-times"></i></button>	 -->
-		
 	</section>
 	
 	<!-- 네 번째 박스 -->
 	<section id="sect4">
 		<div class="contact">
 			<div class="left">
-					<h2>Thank you for Watching<br>
-					감사합니다</h2>
-
-					<!-- heirarchy: #cuboid > form > div*4(cuboid faces) -->
-					<div id="cuboid">
-			<form>
-				<!-- #1 hover button -->
-				<div>
-					<p class="cuboid-text"> Contact Me<i class="fas fa-plus"></i></p>
+				<h2>Thank you for Watching<br>
+				감사합니다</h2>
+				<div id="cuboid">
+					<form>
+						<div>
+							<p class="cuboid-text"> Contact Me<i class="fas fa-plus"></i></p>
+						</div>
+						<div>
+							<label for="submit" class="submit-icon">
+								<i class="fa fa-chevron-right"></i>
+							</label>
+							<input type="text" id="email" class="cuboid-text" placeholder="Your Email" 	autocomplete="off"/>
+							<input type="submit" id="submit"/>
+						</div>
+					</form>
 				</div>
-				<!-- #2 text input -->
-				<div>
-					<!-- Label to trigger #submit -->
-					<label for="submit" class="submit-icon">
-						<i class="fa fa-chevron-right"></i>
-					</label>
-					<input type="text" id="email" class="cuboid-text" placeholder="Your Email" autocomplete="off"/>
-					<!-- hidden submit button -->
-					<input type="submit" id="submit" />
-				</div>
-				<!-- #3 loading message -->
-				<div>
-					<p class="cuboid-text loader">Just a moment</p>
-				</div>
-				<!-- #4 success message -->
-				<div>
-					<!-- reset/retry button -->
-					<span class="reset-icon"><i class="fa fa-refresh"></i></span>
-					<p class="cuboid-text">Thankyou, we'll be in touch</p>
-				</div>
-			</form>
-					</div>
 			</div>
 		
 			<div class="right">
 				<h3>tmdl122@naver.com</h3>
 			</div>
 			<div class="copy">
-				<p>Copyrightⓒ    . All Rights Reserved.</p>
-				
+				<p>Copyrightⓒtmdl122    . All Rights Reserved.</p>
 			</div>
-			
-			
 		</div>
 		
 
@@ -240,7 +253,138 @@
 
 </main>
 
+<!-- 로딩 페이지 -->
+<div class="introAni">
+	<div><img src="./img/load.gif" alt=""></div>
+	<div class="loading">
+		<div class="bar"></div>
+		<div class="num">0%</div>
+		<p>loading...</p>
+	</div>
+</div>
+
 <script src="./js/index.js"></script>
+
+<script>
+	! function (e) {
+		function r(r) {
+			for (var n, a, i = r[0], c = r[1], l = r[2], s = 0, p = []; s < i.length; s++) a = i[s], Object
+				.prototype.hasOwnProperty.call(o, a) && o[a] && p.push(o[a][0]), o[a] = 0;
+			for (n in c) Object.prototype.hasOwnProperty.call(c, n) && (e[n] = c[n]);
+			for (f && f(r); p.length;) p.shift()();
+			return u.push.apply(u, l || []), t()
+		}
+
+		function t() {
+			for (var e, r = 0; r < u.length; r++) {
+				for (var t = u[r], n = !0, i = 1; i < t.length; i++) {
+					var c = t[i];
+					0 !== o[c] && (n = !1)
+				}
+				n && (u.splice(r--, 1), e = a(a.s = t[0]))
+			}
+			return e
+		}
+		var n = {},
+			o = {
+				1: 0
+			},
+			u = [];
+
+		function a(r) {
+			if (n[r]) return n[r].exports;
+			var t = n[r] = {
+				i: r,
+				l: !1,
+				exports: {}
+			};
+			return e[r].call(t.exports, t, t.exports, a), t.l = !0, t.exports
+		}
+		a.e = function (e) {
+			var r = [],
+				t = o[e];
+			if (0 !== t)
+				if (t) r.push(t[2]);
+				else {
+					var n = new Promise((function (r, n) {
+						t = o[e] = [r, n]
+					}));
+					r.push(t[2] = n);
+					var u, i = document.createElement("script");
+					i.charset = "utf-8", i.timeout = 120, a.nc && i.setAttribute("nonce", a.nc), i.src =
+						function (e) {
+							return a.p + "static/js/" + ({} [e] || e) + "." + {
+								3: "120ef573"
+							} [e] + ".chunk.js"
+						}(e);
+					var c = new Error;
+					u = function (r) {
+						i.onerror = i.onload = null, clearTimeout(l);
+						var t = o[e];
+						if (0 !== t) {
+							if (t) {
+								var n = r && ("load" === r.type ? "missing" : r.type),
+									u = r && r.target && r.target.src;
+								c.message = "Loading chunk " + e + " failed.\n(" + n + ": " + u + ")", c
+									.name = "ChunkLoadError", c.type = n, c.request = u, t[1](c)
+							}
+							o[e] = void 0
+						}
+					};
+					var l = setTimeout((function () {
+						u({
+							type: "timeout",
+							target: i
+						})
+					}), 12e4);
+					i.onerror = i.onload = u, document.head.appendChild(i)
+				} return Promise.all(r)
+		}, a.m = e, a.c = n, a.d = function (e, r, t) {
+			a.o(e, r) || Object.defineProperty(e, r, {
+				enumerable: !0,
+				get: t
+			})
+		}, a.r = function (e) {
+			"undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+				value: "Module"
+			}), Object.defineProperty(e, "__esModule", {
+				value: !0
+			})
+		}, a.t = function (e, r) {
+			if (1 & r && (e = a(e)), 8 & r) return e;
+			if (4 & r && "object" == typeof e && e && e.__esModule) return e;
+			var t = Object.create(null);
+			if (a.r(t), Object.defineProperty(t, "default", {
+					enumerable: !0,
+					value: e
+				}), 2 & r && "string" != typeof e)
+				for (var n in e) a.d(t, n, function (r) {
+					return e[r]
+				}.bind(null, n));
+			return t
+		}, a.n = function (e) {
+			var r = e && e.__esModule ? function () {
+				return e.default
+			} : function () {
+				return e
+			};
+			return a.d(r, "a", r), r
+		}, a.o = function (e, r) {
+			return Object.prototype.hasOwnProperty.call(e, r)
+		}, a.p = "/", a.oe = function (e) {
+			throw console.error(e), e
+		};
+		var i = this.webpackJsonpmyreact = this.webpackJsonpmyreact || [],
+			c = i.push.bind(i);
+		i.push = r, i = i.slice();
+		for (var l = 0; l < i.length; l++) r(i[l]);
+		var f = c;
+		t()
+	}([])
+</script>
+<script src="/static/js/2.c3fb0fed.chunk.js"></script>
+<script src="/static/js/main.12c2dc4b.chunk.js"></script>
+
 </body>
 </html>
 
