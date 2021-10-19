@@ -444,7 +444,7 @@ section {
 .container .card2 {
     width: 225px;
     height: 220px;
-    top:7%;
+    top:6%;
     left: 39%;
 } 
 
@@ -472,7 +472,7 @@ section {
 
 .card2 .profile .info {
     position: absolute;
-    top:70px;
+    top:75px;
     left: 22px;
     font-size: 13px;
 }
@@ -579,7 +579,7 @@ section {
 .card4 p:nth-child(1) {
     font-size: 22px;
     color: #8684c4;
-    padding: 0 29px 5px 0;
+    padding: 0 29px 15px 0;
     font-size: 20px;
     text-align: right;
 }
@@ -613,7 +613,6 @@ section {
 
 
 
-
 /* 세번째 구역 */
 #sect3 {
     background-color: #222;
@@ -634,12 +633,12 @@ section {
 #sect3 ul li {
     text-align: center;
     float:left;
-    width: 30%;
+    width: 23%;
     margin: 15px;
     position: relative;
     opacity: 0;
-    transform:translateX(130%);
-    transition: all 2s;
+    transform:translateX(100%);
+    transition: all 1s;
     
 }
 
@@ -648,7 +647,7 @@ section {
     transform: translateX(0%);
 }
 
-/* #sect3 ul li::after {
+#sect3 ul li::after {
     content: '';
     position: absolute;
     top: 90%;
@@ -657,51 +656,21 @@ section {
     height: 140px;
     background-color: #fff;
     box-shadow: 3px 8px 15px rgba(0,0,0,0.1);
-} */
-#sect3 ul li .dbox {
-    position: absolute;
-    top: 100%;
+}
+
+#sect3 ul li a {
+    position: relative;
+    bottom: -30px;
     left: 0;
     width: 100%;
-    height: 105px;
-    background-color: #fff;
     text-align: center;
-    font-weight: bold;
+    z-index: 2;
+    font-weight: 600;
+    color: #626262;
     font-size: 17px;
-    padding: 26px 0 25px;
-    box-shadow: 3px 8px 15px rgba(0,0,0,0.1);
+    display: block;
+   
 }
-
-.desp p {
-    font-size: 14px;
-    color:#777;  
-    padding-bottom: 5px;
-}
-
-.desp span {
-    font-size: 20px;
-}
-
-#sect3 ul li .icon {
-    position: absolute;
-    bottom: 20px;
-    right: 25px;
-    color:#c7c7c7;
-    font-size: 17px;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s;
-}   
-
-#sect3 ul li .icon:hover {
-    color:#444444;
-}
-
-#sect3 ul li:hover .icon {
-    opacity: 1;
-}
-
-
 
 
 
@@ -723,7 +692,6 @@ button.close i {
 button.close.on i {
     opacity: 1;
 } */
-
 
 
 
@@ -785,7 +753,7 @@ button.close.on i {
     /* margin-bottom: 75px; */
     z-index: 3;
     font-weight: lighter;
-    color: #a0a0a0;
+    color: #a7a7a7;
     opacity: 0;
     transition: all 3s;
 }
@@ -795,22 +763,30 @@ button.close.on i {
 }
   
 
+
+
+
     #cuboid {
         width: 300px; 
+        /*this also makes #cuboid a container for absolutely positioned descendants*/
         perspective: 1000px;
     }
-
     #cuboid form {
+        /*counter translate*/
         transform: translateZ(-20px);
+        /*propogate 3d space for children*/
         transform-style: preserve-3d;
+        /*prevent height collapse as children are absolutely positioned*/
         height: 40px;
-        transition: all 0.4s;
+        /*for smooth animations*/
+        transition: all 0.35s;
     }
     
+    /*faces*/
     .cuboid-text {
-        line-height: 40px; 
-        height: 40px;
-        background: #888888;
+        /*each face will be 40px high*/
+        line-height: 40px; height: 40px;
+        background: #979797;
         color: #fff;
         padding-left: 15px;
     }
@@ -818,34 +794,80 @@ button.close.on i {
     .cuboid-text i {
         padding-left: 170px;
     }
-
+    .loader {
+        background: hsl(120, 40%, 30%);
+        animation: phase 1s infinite;
+    }
+    /*Lets create a pulsating animation for the loader face*/
+    @keyframes phase {
+        50% {background: hsl(120, 70%, 30%);}
+    }
     #email {
         background: white; outline: none; border: 0 none;
         font: inherit; text-align: left; color: hsl(120, 40%, 30%);
         display: block; width: 100%; padding: 0 10px;
         box-sizing: border-box;
     }
-
     #submit {display: none;}
     
     .submit-icon, .reset-icon {
         position: absolute; top: 0; right: 0;
         color: rgba(0, 0, 0, 0.25);
         line-height: 40px; padding: 0 10px;
+        /*smooth transitions when user activates input and types something*/
+        transition: all 0.5s;
+        /*to make the icons feel like buttons*/
         cursor: pointer;
     }
-
+    /*.active = when the user is typing something*/
+    .submit-icon.active {color: hsl(120, 40%, 30%);}
+    .reset-icon {color: rgba(255, 255, 255, 0.25); font-size: 14px;}
     
     #cuboid div {position: absolute; top: 0; left: 0; width: 100%;}
+    /*3D transforms. Each face will be rotated in multiples of -90deg and moved 20px(half of their 40px height) out*/
     #cuboid div:nth-child(1) {transform: rotateX(0deg) translateZ(20px);}
     #cuboid div:nth-child(2) {transform: rotateX(-90deg) translateZ(20px);}
-
+    #cuboid div:nth-child(3) {transform: rotateX(-180deg) translateZ(20px);}
+    #cuboid div:nth-child(4) {transform: rotateX(-270deg) translateZ(20px);}
+    
+    /*the form will have 4 states/classes(default+3) for rotation*/
     #cuboid form:hover, 
     #cuboid form.ready {transform: translateZ(-20px) rotateX(90deg);}
+    #cuboid form.loading {transform: translateZ(-20px) rotateX(180deg);}
+    #cuboid form.complete {transform: translateZ(-20px) rotateX(270deg);}
+/* #sect4 {
+    padding: 260px 200px 100px 350px;
+}
 
+.contactBox form div {
+    width: 290px;
+    text-align: center;
+    position: relative;
+}
 
+.contactBox form div:nth-child(1) {
+    transform: rotateX(-90deg);
+}
 
+.contactBox .contactText {
+    background-color: #fff;
+    
+}
 
+.contactBox #email {
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
+    display: block; width: 100%; padding: 0 10px;
+    position: relative;
+}
+
+.contactBox .icon {
+    position: absolute; 
+    top: 0; 
+    right: 0;
+	color: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+} */
 
 
 .introAni {
@@ -854,8 +876,7 @@ button.close.on i {
     top:0; 
     left:0; 
     bottom:0;
-    background:#fff;
-    color:#b6b6b6; 
+    background:#f1f1f1;
     z-index:9999999;
     display: flex;
     flex-direction: column;
@@ -864,45 +885,56 @@ button.close.on i {
 
 }
 
-.introAni img {width: 500px}
-.introAni p {
-    font-size: 19px;
-    text-align: center;
-}
-.loading {
-    background-color: #f0f0f0;
-    width: 600px;
-    height: 14px;
+.loadButton {
+    display: inline-block; 
+    padding: 20px 50px;
+    color:#d6d6d6; 
+    transition: all 0.5s;
+    background-color: #fff;
     position: relative;
-    border-radius: 60px;
-    box-shadow: inset 0 3px 8px #dddddd;
-    margin-bottom: 100px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 80px;
 }
 
+.loadButton:hover {
+    margin-left: 10px;
+    margin-top: 10px;
+}
 
-
-.loading .bar{
+.loadButton::before {
+    content: '';
     position: absolute;
-    top:0%; left: 0;
-    animation: loading 4s linear;
-    text-align: center;
-    color: #fff;
-    background-color: #bbbbbb;
-    border-radius: 4px 4px 4px 4px;
-    width: 100%;
-    height: 14px;
-    border-radius: 60px;
+	bottom: -25px;
+	height: 25px;
+	width: 100%;
+	left: 8px;
+	transform: skewX(45deg);
+	background-color: #c7c7c7;
+    transition: all 0.5s;
 }
-.loading .num {
-    padding-left: 620px;
-    font-size:17px; 
-}
-@keyframes loading {
-    0% {
-      width: 0;
-    } 100% {
-      width: 100%;
-    }
-  }
 
+.loadButton:hover::before {
+    bottom: -5px;
+    height: 5px;
+    left: 3px;
+}
+
+.loadButton::after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    height: 100%;
+    width: 25px;
+    bottom: -8px;
+    transform: skewY(45deg);
+	background-color: #a8a8a8;
+    transition: all 0.5s;
+}
+
+.loadButton:hover::after {
+    right: -5px;
+    width: 5px;
+    bottom: -3px;
+}
 

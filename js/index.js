@@ -221,50 +221,58 @@ $('body').on('click','.outlayer',function(){
     $('.portfolio').removeClass('on')
 })
 
-$('.slideInner1').slick({
-    autoplay:false,
-    slidesToShow:3,
-    autoplaySpeed: 2000,
-    slidesToScroll:1,
-    // centerMode:true,
-    // centerPadding:"10px",
-    arrows: false,
-    responsive:[{
-        breakpoint:801,
-        settings:{
-            slidesToShow:1,
-            centerMode:false,
-        }
-    }]
-})
 
 
 
 // 4번째 구역
-$("#email").on('mouseover', function(){
-    $("#cuboid form").addClass("ready");
+
+//jQuery time
+//jQuery time
+
+//add '.ready' to form when user focuses on it
+$("#email").focus(function(){
+	$("#cuboid form").addClass("ready");
+})
+//remove '.ready' when user blus away but only if there is no content
+$("#email").blur(function(){
+	if($(this).val() == "")
+		$("#cuboid form").removeClass("ready");
 })
 
-$("#email").on('mouseout', function(){
-    $("#cuboid form").removeClass("ready");
+//If the user is typing something make the arrow green/.active
+$("#email").keyup(function(){
+	//this adds .active class only if the input has some text
+	$(".submit-icon").toggleClass("active", $(this).val().length > 0);
+})
+
+//on form submit remove .ready and add .loading to the form
+$("#cuboid form").submit(function(){
+	$(this).removeClass("ready").addClass("loading");
+	//finish loading in 3s
+	setTimeout(complete, 3000);
+	//prevent default form submisson
+	return false;
+})
+function complete()
+{
+	$("#cuboid form").removeClass("loading").addClass("complete");
+}
+//reset/refresh functionality
+$(".reset-icon").click(function(){
+	$("#cuboid form").removeClass("complete");
 })
 
 
 
 // 로드페이지
-$(window).on('load', function(){
-    var i = 0;
-    var timer = setInterval(add, 40)
+$('.loadButton').on('click', function(){
+ 
 
-    function add(){
-        i++
-        if (i>=100) {
-            clearInterval(timer)
-            $('.introAni').delay(2000).fadeOut(0)
+            $('.introAni').delay(500).fadeOut(0)
             // $('.introAni').animate({},1000, function(){
             //     $(this).hide()
             // })
-        }
-        $('.introAni .num').text(i+'%')
-    }
+        
+
+    
 })
